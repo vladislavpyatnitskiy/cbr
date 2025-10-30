@@ -1,6 +1,8 @@
 lapply(c("rvest", "timeSeries"), require, character.only = T) # Libs
 
 cbr_interest_rate <- function(s, e){
+
+  if (as.Date(s, format = "%d.%m.%Y") < "2013-09-17") s = "17.09.2013"
  
   L <- sprintf(
     paste(
